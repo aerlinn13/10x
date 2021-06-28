@@ -24,7 +24,9 @@ const UserList = () => {
 			<CreateUserButton data-test-id="create-user-button" to="/new">
 				Create new user
 			</CreateUserButton>
-			<React.Fragment>{useSelector(users).map((user: User) => <UserListItem user={user} />)}</React.Fragment>
+			<React.Fragment>
+				{useSelector(users).map((user: User) => <UserListItem key={user.id} user={user} />)}
+			</React.Fragment>
 		</React.Fragment>
 	);
 };

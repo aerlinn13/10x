@@ -7,7 +7,7 @@ import { getUsers, users } from './state/slice';
 import UserList from './components/UserList/UserList';
 import SingleUser from './components/SingleUser/SingleUser';
 
-import createBrowserHistory from 'history/createBrowserHistory';
+const createBrowserHistory = require('history').createBrowserHistory;
 
 export const history = createBrowserHistory();
 
