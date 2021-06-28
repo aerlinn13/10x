@@ -31,9 +31,9 @@ const Image = styled.img`
 const UserListItem = ({ user }: { user: User }) => {
 	const { id, first_name, last_name, avatar = `https://via.placeholder.com/40` } = user;
 	return (
-		<Wrapper>
+		<Wrapper data-test-id="user-item">
 			<Image src={avatar} />
-			<Header to={`/${id}`}>{`${first_name} ${last_name}`}</Header>
+			<Header data-test-id={id} to={`/${id}`}>{`${first_name} ${last_name}`}</Header>
 		</Wrapper>
 	);
 };

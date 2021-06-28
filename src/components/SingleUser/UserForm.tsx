@@ -43,13 +43,15 @@ const UserForm = ({ user, onSubmit }: Props) => {
 		>
 			{({ errors, touched }) => (
 				<StyledForm>
-					<StyledField name="first_name" placeholder="first name" />
+					<StyledField data-test-id="first-name-field" name="first_name" placeholder="first name" />
 					{<ErrorLabel>{errors.first_name && touched.first_name ? errors.first_name : null}</ErrorLabel>}
-					<StyledField name="last_name" placeholder="last name" />
+					<StyledField data-test-id="last-name-field" name="last_name" placeholder="last name" />
 					{<ErrorLabel>{errors.last_name && touched.last_name ? errors.last_name : null}</ErrorLabel>}
-					<StyledField name="email" type="email" placeholder="email" />
+					<StyledField data-test-id="email-field" name="email" type="email" placeholder="email" />
 					{<ErrorLabel>{errors.email && touched.email ? errors.email : null}</ErrorLabel>}
-					<button type="submit">Submit</button>
+					<button data-test-id="submit-button" type="submit">
+						Submit
+					</button>
 				</StyledForm>
 			)}
 		</Formik>

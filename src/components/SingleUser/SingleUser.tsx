@@ -39,7 +39,11 @@ const SingleUser = () => {
 			<BackLink to="/">Back</BackLink>
 			<h1>{user.id ? `Edit user details` : `Create new user`}</h1>
 			<UserForm user={user} onSubmit={user.id ? update : create} />
-			{user.id && <DeleteUserButton onClick={() => remove(user.id)}>Delete user</DeleteUserButton>}
+			{user.id && (
+				<DeleteUserButton data-test-id="delete-user-button" onClick={() => remove(user.id)}>
+					Delete user
+				</DeleteUserButton>
+			)}
 		</Wrapper>
 	);
 };

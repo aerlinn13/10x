@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import RepoListItem from './UserListItem';
+import UserListItem from './UserListItem';
 import { User, users } from '../../state/slice';
 
 const Header = styled.h2`
@@ -21,8 +21,10 @@ const UserList = () => {
 	return (
 		<React.Fragment>
 			<Header>List of users</Header>
-			<CreateUserButton to="/new">Create new user</CreateUserButton>
-			<React.Fragment>{useSelector(users).map((user: User) => <RepoListItem user={user} />)}</React.Fragment>
+			<CreateUserButton data-test-id="create-user-button" to="/new">
+				Create new user
+			</CreateUserButton>
+			<React.Fragment>{useSelector(users).map((user: User) => <UserListItem user={user} />)}</React.Fragment>
 		</React.Fragment>
 	);
 };
