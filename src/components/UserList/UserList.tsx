@@ -20,7 +20,7 @@ const CreateUserButton = styled(Link)`
 const UserList = () => {
 	return (
 		<React.Fragment>
-			<Header>List of users</Header>
+			<Header>Users</Header>
 			<CreateUserButton data-test-id="create-user-button" to="/new">
 				Create new user
 			</CreateUserButton>
